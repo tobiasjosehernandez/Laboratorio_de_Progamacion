@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechStore — Laboratorio de Programación</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- =============================================
+       HEADER
+  ============================================== -->
+  <header class="header">
+    <div class="header__logo">
+      <span class="header__logo-icon">⚡</span>
+      <span class="header__logo-text">TechStore</span>
+    </div>
+    <nav class="header__nav">
+      <a href="#productos" class="header__link">Productos</a>
+      <a href="#carrito"   class="header__link">Carrito</a>
+      <a href="#contacto"  class="header__link">Contacto</a>
+    </nav>
+    <button class="header__carrito-btn" id="btnCarrito">
+      🛒 <span id="contadorCarrito">0</span>
+    </button>
+  </header>
+
+  <!-- =============================================
+       HERO
+  ============================================== -->
+  <section class="hero">
+    <div class="hero__contenido">
+      <h1 class="hero__titulo" id="heroTitulo">Tecnología para todos</h1>
+      <p class="hero__subtitulo" id="heroSubtitulo">
+        Los mejores productos al mejor precio. Envío gratis en compras mayores a $100.000.
+      </p>
+      <button class="btn btn--primario" id="btnVerProductos">Ver productos</button>
+    </div>
+  </section>
+
+  <!-- =============================================
+       BARRA DE BÚSQUEDA Y FILTROS
+  ============================================== -->
+  <section class="filtros" id="filtros">
+    <div class="filtros__contenedor">
+      <input
+        type="text"
+        class="filtros__busqueda"
+        id="inputBusqueda"
+        placeholder="Buscar producto..."
+      />
+      <div class="filtros__categorias">
+        <button class="filtros__btn activo" data-categoria="todos">Todos</button>
+        <button class="filtros__btn" data-categoria="computacion">Computación</button>
+        <button class="filtros__btn" data-categoria="perifericos">Periféricos</button>
+        <button class="filtros__btn" data-categoria="audio">Audio</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       PRODUCTOS
+  ============================================== -->
+  <section class="productos" id="productos">
+    <h2 class="seccion__titulo">Nuestros productos</h2>
+    <p class="seccion__subtitulo" id="contadorProductos">Mostrando 6 productos</p>
+
+    <div class="productos__grilla" id="grillaProdutos">
+
+      <article class="card" data-id="1" data-categoria="computacion">
+        <div class="card__badge">Más vendido</div>
+        <div class="card__imagen">💻</div>
+        <div class="card__cuerpo">
+          <span class="card__categoria">Computación</span>
+          <h3 class="card__nombre">Notebook Pro 15"</h3>
+          <p class="card__descripcion">Intel i7 · 16GB RAM · SSD 512GB · Windows 11</p>
+          <div class="card__footer">
+            <span class="card__precio" data-precio="450000">$450.000</span>
+            <button class="btn btn--agregar" data-id="1">Agregar</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-id="2" data-categoria="perifericos">
+        <div class="card__imagen">⌨️</div>
+        <div class="card__cuerpo">
+          <span class="card__categoria">Periféricos</span>
+          <h3 class="card__nombre">Teclado Mecánico RGB</h3>
+          <p class="card__descripcion">Switch Blue · Retroiluminado · USB-C</p>
+          <div class="card__footer">
+            <span class="card__precio" data-precio="35000">$35.000</span>
+            <button class="btn btn--agregar" data-id="2">Agregar</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-id="3" data-categoria="perifericos">
+        <div class="card__badge card__badge--oferta">Oferta</div>
+        <div class="card__imagen">🖱️</div>
+        <div class="card__cuerpo">
+          <span class="card__categoria">Periféricos</span>
+          <h3 class="card__nombre">Mouse Inalámbrico</h3>
+          <p class="card__descripcion">2.4GHz · 1600 DPI · Batería 12 meses</p>
+          <div class="card__footer">
+            <span class="card__precio" data-precio="18000">$18.000</span>
+            <button class="btn btn--agregar" data-id="3">Agregar</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-id="4" data-categoria="computacion">
+        <div class="card__imagen">🖥️</div>
+        <div class="card__cuerpo">
+          <span class="card__categoria">Computación</span>
+          <h3 class="card__nombre">Monitor Full HD 27"</h3>
+          <p class="card__descripcion">1920×1080 · 75Hz · Panel IPS · HDMI + VGA</p>
+          <div class="card__footer">
+            <span class="card__precio" data-precio="180000">$180.000</span>
+            <button class="btn btn--agregar" data-id="4">Agregar</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-id="5" data-categoria="audio">
+        <div class="card__imagen">🎧</div>
+        <div class="card__cuerpo">
+          <span class="card__categoria">Audio</span>
+          <h3 class="card__nombre">Auriculares Bluetooth</h3>
+          <p class="card__descripcion">Cancelación de ruido · 30hs batería · Plegable</p>
+          <div class="card__footer">
+            <span class="card__precio" data-precio="65000">$65.000</span>
+            <button class="btn btn--agregar" data-id="5">Agregar</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-id="6" data-categoria="audio">
+        <div class="card__imagen">🔊</div>
+        <div class="card__cuerpo">
+          <span class="card__categoria">Audio</span>
+          <h3 class="card__nombre">Parlante Portátil</h3>
+          <p class="card__descripcion">Bluetooth 5.0 · Resistente al agua · 10hs batería</p>
+          <div class="card__footer">
+            <span class="card__precio" data-precio="28000">$28.000</span>
+            <button class="btn btn--agregar" data-id="6">Agregar</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Mensaje cuando no hay resultados -->
+    <div class="sin-resultados oculto" id="sinResultados">
+      <span>🔍</span>
+      <p>No se encontraron productos.</p>
+    </div>
+
+  </section>
+
+  <!-- =============================================
+       CARRITO
+  ============================================== -->
+  <section class="carrito" id="carrito">
+    <h2 class="seccion__titulo">Tu carrito</h2>
+
+    <div class="carrito__contenedor">
+      <div class="carrito__lista" id="listaCarrito">
+        <!-- Los items se insertan dinámicamente con JS -->
+        <p class="carrito__vacio" id="carritoVacio">Tu carrito está vacío.</p>
+      </div>
+
+      <div class="carrito__resumen" id="resumenCarrito">
+        <h3 class="carrito__resumen-titulo">Resumen</h3>
+        <div class="carrito__linea">
+          <span>Subtotal</span>
+          <span id="subtotal">$0</span>
+        </div>
+        <div class="carrito__linea">
+          <span>IVA (21%)</span>
+          <span id="iva">$0</span>
+        </div>
+        <div class="carrito__linea carrito__linea--total">
+          <span>Total</span>
+          <span id="total">$0</span>
+        </div>
+        <button class="btn btn--primario btn--bloque" id="btnComprar">
+          Finalizar compra
+        </button>
+        <button class="btn btn--secundario btn--bloque" id="btnVaciar">
+          Vaciar carrito
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       FORMULARIO DE CONTACTO
+  ============================================== -->
+  <section class="contacto" id="contacto">
+    <h2 class="seccion__titulo">Contacto</h2>
+    <p class="seccion__subtitulo">¿Tenés alguna consulta? Escribinos.</p>
+
+    <form class="formulario" id="formContacto" novalidate>
+
+      <div class="formulario__grupo">
+        <label class="formulario__label" for="inputNombre">Nombre completo</label>
+        <input
+          type="text"
+          class="formulario__input"
+          id="inputNombre"
+          name="nombre"
+          placeholder="Ej: Ana García"
+          autocomplete="name"
+        />
+        <span class="formulario__error" id="errorNombre"></span>
+      </div>
+
+      <div class="formulario__grupo">
+        <label class="formulario__label" for="inputEmail">Correo electrónico</label>
+        <input
+          type="email"
+          class="formulario__input"
+          id="inputEmail"
+          name="email"
+          placeholder="Ej: ana@mail.com"
+          autocomplete="email"
+        />
+        <span class="formulario__error" id="errorEmail"></span>
+      </div>
+
+      <div class="formulario__grupo">
+        <label class="formulario__label" for="inputAsunto">Asunto</label>
+        <select class="formulario__input" id="inputAsunto" name="asunto">
+          <option value="">— Seleccioná un asunto —</option>
+          <option value="consulta">Consulta de producto</option>
+          <option value="envio">Información de envío</option>
+          <option value="garantia">Garantía / devolución</option>
+          <option value="otro">Otro</option>
+        </select>
+        <span class="formulario__error" id="errorAsunto"></span>
+      </div>
+
+      <div class="formulario__grupo">
+        <label class="formulario__label" for="inputMensaje">Mensaje</label>
+        <textarea
+          class="formulario__input formulario__textarea"
+          id="inputMensaje"
+          name="mensaje"
+          placeholder="Escribí tu consulta acá..."
+          rows="4"
+        ></textarea>
+        <span class="formulario__error" id="errorMensaje"></span>
+        <span class="formulario__contador" id="contadorMensaje">0 / 300</span>
+      </div>
+
+      <button type="submit" class="btn btn--primario btn--bloque" id="btnEnviar">
+        Enviar mensaje
+      </button>
+
+      <div class="formulario__exito oculto" id="mensajeExito">
+        ✅ Mensaje enviado correctamente. Te respondemos pronto.
+      </div>
+
+    </form>
+  </section>
+
+  <!-- =============================================
+       FOOTER
+  ============================================== -->
+  <footer class="footer">
+    <p>⚡ TechStore · Laboratorio de Programación 2026</p>
+    <p class="footer__sub">Tecnicatura en Desarrollo de Software</p>
+  </footer>
+
+  <!-- Script activo — cambiar según la clase -->
+  <script src="clase01-dom.js"></script>
+
+</body>
+</html>
